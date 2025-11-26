@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loans - Mgrand Sacco</title>
+    <meta name="description" content="Access affordable loan products at Mgrand Sacco tailored to meet your personal, business, and development needs.">
+    <meta name="keywords" content="sacco, loans, credit, financing, personal loans, business loans, Mgrand Sacco">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .page-header {
+            background: var(--gradient-green);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+
+        .loan-card {
+            height: 100%;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            background: white;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-green);
+            opacity: 0.05;
+            transition: left 0.5s ease;
+        }
+
+        .loan-card:hover::before {
+            left: 0;
+        }
+
+        .loan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+        }
+
+        .loan-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--gradient-green);
+            color: white;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .loan-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .loan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .loan-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .loan-requirements {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .loan-calculator {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .calculator-result {
+            background: var(--gradient-green);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            height: calc(100% + 15px);
+            width: 2px;
+            background: var(--light-green);
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            display: none;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .testimonial-nav button {
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .testimonial-nav button:hover {
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="img/logo.png" alt="Mgrand Sacco Logo" class="d-inline-block align-top me-2" height="40">
+                    Mgrand Sacco
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="membership.html">Membership</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="loans.html">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="savings.html">Savings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Our Loan Products</h1>
+                    <p class="page-subtitle">Access affordable loan products tailored to meet your personal, business, and development needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Loan Products</h2>
+                    <p class="section-subtitle animate-on-scroll">We offer a variety of loan products to suit your specific financial needs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="loan-card">
+                        <div class="loan-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Personal Loan</h3>
+                        <p>Flexible personal loans to meet your immediate financial needs for personal development, emergencies, or special projects.</p>
+                        <ul class="loan-features">
+                            <li>Amount: Ksh 10,000 - Ksh 500,000</li>
+                            <li>Interest Rate: 12% p.a. reducing balance</li>
+                            <li>Repayment Period: Up to 48 months</li>
+                            <li>Processing Time: 3-5 working days</li>
+                        </ul>
+                        <div class="loan-requirements">
+                            <h5>Requirements</h5>
+                            <ul class="loan-features">
+                                <li>Minimum 6 months membership</li>
+                                <li>3 months consecutive contributions</li>
+                                <li>Guarantors (2)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="loan-card">
+                        <div class="loan-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Business Loan</h3>
+                        <p>Empower your business with our affordable business loans designed to help you expand, stock, or improve operations.</p>
+                        <ul class="loan-features">
+                            <li>Amount: Ksh 50,000 - Ksh 2,000,000</li>
+                            <li>Interest Rate: 14% p.a. reducing balance</li>
+                            <li>Repayment Period: Up to 60 months</li>
+                            <li>Processing Time: 5-7 working days</li>
+                        </ul>
+                        <div class="loan-requirements">
+                            <h5>Requirements</h5>
+                            <ul class="loan-features">
+                                <li>Minimum 12 months membership</li>
+                                <li>6 months consecutive contributions</li>
+                                <li>Business registration documents</li>
+                                <li>Business financial statements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="loan-card">
+                        <div class="loan-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Development Loan</h3>
+                        <p>Finance your dream home or development project with our long-term development loans at competitive rates.</p>
+                        <ul class="loan-features">
+                            <li>Amount: Ksh 100,000 - Ksh 5,000,000</li>
+                            <li>Interest Rate: 13% p.a. reducing balance</li>
+                            <li>Repayment Period: Up to 120 months</li>
+                            <li>Processing Time: 7-14 working days</li>
+                        </ul>
+                        <div class="loan-requirements">
+                            <h5>Requirements</h5>
+                            <ul class="loan-features">
+                                <li>Minimum 24 months membership</li>
+                                <li>12 months consecutive contributions</li>
+                                <li>Title deeds or sale agreement</li>
+                                <li>Approved architectural plans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="loan-card">
+                        <div class="loan-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Education Loan</h3>
+                        <p>Invest in your future or that of your loved ones with our affordable education loans for school fees and related expenses.</p>
+                        <ul class="loan-features">
+                            <li>Amount: Ksh 20,000 - Ksh 500,000</li>
+                            <li>Interest Rate: 10% p.a. reducing balance</li>
+                            <li>Repayment Period: Up to 36 months</li>
+                            <li>Processing Time: 3-5 working days</li>
+                        </ul>
+                        <div class="loan-requirements">
+                            <h5>Requirements</h5>
+                            <ul class="loan-features">
+                                <li>Minimum 6 months membership</li>
+                                <li>3 months consecutive contributions</li>
+                                <li>Admission letter or fee structure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="loan-card">
+                        <div class="loan-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Asset Finance</h3>
+                        <p>Acquire your dream vehicle or other assets with our flexible asset financing options at competitive rates.</p>
+                        <ul class="loan-features">
+                            <li>Amount: Ksh 100,000 - Ksh 3,000,000</li>
+                            <li>Interest Rate: 14% p.a. reducing balance</li>
+                            <li>Repayment Period: Up to 60 months</li>
+                            <li>Processing Time: 5-7 working days</li>
+                        </ul>
+                        <div class="loan-requirements">
+                            <h5>Requirements</h5>
+                            <ul class="loan-features">
+                                <li>Minimum 12 months membership</li>
+                                <li>6 months consecutive contributions</li>
+                                <li>Proforma invoice or quotation</li>
+                                <li>Insurance of the asset</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="loan-card">
+                        <div class="loan-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Emergency Loan</h3>
+                            <p>Quick access to funds for emergency situations with minimal requirements and fast processing.</p>
+                        <ul class="loan-features">
+                            <li>Amount: Ksh 5,000 - Ksh 50,000</li>
+                            <li>Interest Rate: 15% p.a. reducing balance</li>
+                            <li>Repayment Period: Up to 12 months</li>
+                            <li>Processing Time: 24 hours</li>
+                        </ul>
+                        <div class="loan-requirements">
+                            <h5>Requirements</h5>
+                            <ul class="loan-features">
+                                <li>Minimum 3 months membership</li>
+                                <li>1 month consecutive contributions</li>
+                                <li>One guarantor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Loan Calculator</h2>
+                    <p class="section-subtitle animate-on-scroll">Calculate your monthly loan repayments with our easy-to-use calculator</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 animate-on-scroll">
+                    <div class="loan-calculator">
+                        <form id="loanCalculatorForm">
+                            <div class="mb-4">
+                                <label for="loanAmount" class="form-label">Loan Amount (Ksh)</label>
+                                <input type="number" class="form-control" id="loanAmount" min="5000" max="5000000" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="interestRate" class="form-label">Interest Rate (%)</label>
+                                <input type="number" class="form-control" id="interestRate" min="8" max="20" step="0.1" value="12" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="loanPeriod" class="form-label">Repayment Period (Months)</label>
+                                <input type="number" class="form-control" id="loanPeriod" min="1" max="120" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100">Calculate Repayment</button>
+                        </form>
+                        <div id="calculatorResult" class="calculator-result">
+                            <h4>Monthly Repayment</h4>
+                            <h2 id="monthlyPayment">Ksh 0</h2>
+                            <p>Total Interest: <span id="totalInterest">Ksh 0</span></p>
+                            <p>Total Amount: <span id="totalAmount">Ksh 0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Application Process Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Loan Application Process</h2>
+                    <p class="section-subtitle animate-on-scroll">Simple and transparent process to access our loan facilities</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Application</h4>
+                        <p>Fill out the loan application form and submit it along with the required documents at any of our branches or through our mobile app.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Review</h4>
+                        <p>Our loan officers will review your application and assess your eligibility based on your savings history and repayment capacity.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Approval</h4>
+                        <p>Once approved, you'll receive a loan offer with the terms and conditions. Review and accept the offer to proceed.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Disbursement</h4>
+                        <p>After acceptance, the loan amount will be disbursed to your account within the specified timeframe.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <img src="https://picsum.photos/seed/loan-process/600/500.jpg" alt="Loan Application Process" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Loan Success Stories</h2>
+                    <p class="section-subtitle animate-on-scroll">Hear from our members who have benefited from our loan products</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto animate-on-scroll">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-slide active">
+                            <p class="mb-4">"The business loan I got from Mgrand Sacco enabled me to expand my retail shop and increase my stock. The application process was smooth, and the interest rates were very reasonable compared to other lenders."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://picsum.photos/seed/loan-testimonial1/60/60.jpg" alt="Member" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <div class="testimonial-author">John Kamau</div>
+                                    <div class="testimonial-position">Business Owner</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <p class="mb-4">"I was able to complete my house construction thanks to the development loan from Mgrand Sacco. The long repayment period made it affordable, and the staff was very supportive throughout the process."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://picsum.photos/seed/loan-testimonial2/60/60.jpg" alt="Member" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <div class="testimonial-author">Grace Njeri</div>
+                                    <div class="testimonial-position">Teacher</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <p class="mb-4">"When I had a medical emergency, Mgrand Sacco came through with an emergency loan within 24 hours. This helped me get the medical attention I needed without delay. I'm truly grateful for their support."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://picsum.photos/seed/loan-testimonial3/60/60.jpg" alt="Member" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <div class="testimonial-author">Peter Otieno</div>
+                                    <div class="testimonial-position">Farmer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <button id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                        <button id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Mgrand Sacco</h3>
+                    <p>Empowering our members through affordable financial services that promote savings, provide credit, and foster economic growth.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="loans.html">Loans</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Personal Banking</a></li>
+                        <li><a href="#">Business Banking</a></li>
+                        <li><a href="#">Mobile Banking</a></li>
+                        <li><a href="#">Financial Education</a></li>
+                        <li><a href="#">Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="contact-info">
+                        <div class="d-flex mb-3">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p>123 Financial Street, Nairobi, Kenya</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <p>+254 123 456 789</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p>info@mgrandsacco.co.ke</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <div class="copyright">
+                        <p>&copy; 2023 Mgrand Sacco. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script>
+        // Loan Calculator
+        document.getElementById('loanCalculatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get input values
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly interest rate
+            const loanPeriod = parseInt(document.getElementById('loanPeriod').value); // In months
+
+            // Calculate monthly payment using the formula: M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1 ]
+            const monthlyPayment = loanAmount * (interestRate * Math.pow(1 + interestRate, loanPeriod)) / (Math.pow(1 + interestRate, loanPeriod) - 1);
+            const totalAmount = monthlyPayment * loanPeriod;
+            const totalInterest = totalAmount - loanAmount;
+
+            // Display results
+            document.getElementById('monthlyPayment').textContent = 'Ksh ' + monthlyPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalInterest').textContent = 'Ksh ' + totalInterest.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalAmount').textContent = 'Ksh ' + totalAmount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // Show the result section
+            document.getElementById('calculatorResult').style.display = 'block';
+        });
+
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const prevButton = document.getElementById('prevTestimonial');
+        const nextButton = document.getElementById('nextTestimonial');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+    </script>
+</body>
+</html>

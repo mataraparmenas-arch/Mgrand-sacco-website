@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - Mgrand Sacco</title>
+    <meta name="description" content="Become a member of Mgrand Sacco and access affordable financial services designed to help you achieve your financial goals.">
+    <meta name="keywords" content="sacco, membership, join, registration, Mgrand Sacco">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .page-header {
+            background: var(--gradient-green);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+
+        .membership-card {
+            height: 100%;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        .membership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+        }
+
+        .membership-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--gradient-green);
+            color: white;
+            font-size: 2rem;
+        }
+
+        .requirement-item {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-item:hover {
+            background: #e8f5e9;
+            transform: translateX(5px);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon {
+            margin-right: 15px;
+            color: var(--accent-green);
+            font-size: 1.5rem;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            height: calc(100% + 15px);
+            width: 2px;
+            background: var(--light-green);
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="img/logo.png" alt="Mgrand Sacco Logo" class="d-inline-block align-top me-2" height="40">
+                    Mgrand Sacco
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="membership.html">Membership</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="loans.html">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="savings.html">Savings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Join Mgrand Sacco</h1>
+                    <p class="page-subtitle">Become a member and access affordable financial services designed to help you achieve your financial goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Types Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Membership Types</h2>
+                    <p class="section-subtitle animate-on-scroll">Choose the membership option that best suits your needs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="membership-card">
+                        <div class="membership-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Individual Membership</h3>
+                        <p>Perfect for individuals looking to save money and access credit facilities for personal development and investment.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Minimum share capital: Ksh 2,000</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Monthly contribution: Ksh 500+</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Access to all loan products</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="membership-card">
+                        <div class="membership-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Group Membership</h3>
+                        <p>Ideal for chamas, investment groups, and community organizations looking for collective financial solutions.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Minimum share capital: Ksh 10,000</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Monthly contribution: Ksh 2,000+</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Group loan facilities available</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="membership-card">
+                        <div class="membership-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Corporate Membership</h3>
+                        <p>Designed for businesses and organizations seeking financial solutions for their employees and operations.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Minimum share capital: Ksh 50,000</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Monthly contribution: Ksh 10,000+</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i> Special corporate loan products</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Requirements Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Membership Requirements</h2>
+                    <p class="section-subtitle animate-on-scroll">Simple requirements to join our growing community of members</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <h3 class="mb-4">For Individuals</h3>
+                    <div class="requirement-item">
+                        <h5>Identification Documents</h5>
+                        <p>Original and copy of National ID, Passport, or Alien ID</p>
+                    </div>
+                    <div class="requirement-item">
+                        <h5>Proof of Residence</h5>
+                        <p>Recent utility bill, rent agreement, or letter from local chief</p>
+                    </div>
+                    <div class="requirement-item">
+                        <h5>Passport Photo</h5>
+                        <p>Two recent passport-sized photographs</p>
+                    </div>
+                    <div class="requirement-item">
+                        <h5>KRA PIN Certificate</h5>
+                        <p>Copy of your KRA PIN certificate</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h3 class="mb-4">For Groups & Corporates</h3>
+                    <div class="requirement-item">
+                        <h5>Registration Documents</h5>
+                        <p>Certificate of registration, constitution, and minutes appointing signatories</p>
+                    </div>
+                    <div class="requirement-item">
+                        <h5>Identification for All Members</h5>
+                        <p>Copies of ID documents for all group members or directors</p>
+                    </div>
+                    <div class="requirement-item">
+                        <h5>Bank Details</h5>
+                        <p>Bank statement for the last 6 months and bank details</p>
+                    </div>
+                    <div class="requirement-item">
+                        <h5>Financial Records</h5>
+                        <p>Audited financial statements for the previous year</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Benefits Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">Membership Benefits</h2>
+                    <p class="section-subtitle animate-on-scroll">Enjoy numerous benefits as a member of Mgrand Sacco</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div>
+                            <h4>Competitive Interest Rates</h4>
+                            <p>Enjoy lower interest rates on loans compared to commercial banks</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div>
+                            <h4>Dividend Payments</h4>
+                            <p>Receive annual dividends based on your share capital and savings</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Insurance Coverage</h4>
+                            <p>Free insurance coverage for loans and deposits</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Mobile Banking</h4>
+                            <p>Access your account and perform transactions through our mobile app</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4>Financial Education</h4>
+                            <p>Free financial literacy training and workshops</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h4>Member Discounts</h4>
+                            <p>Special discounts on selected products and services from our partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Join Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate-on-scroll">How to Join</h2>
+                    <p class="section-subtitle animate-on-scroll">Follow these simple steps to become a member</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="process-step animate-on-scroll">
+                        <div class="step-number">1</div>
+                        <h4>Visit Our Office</h4>
+                        <p>Visit any of our branches with your identification documents and other required paperwork.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="step-number">2</div>
+                        <h4>Complete Application Form</h4>
+                        <p>Fill out the membership application form with accurate information and submit it to our staff.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="step-number">3</div>
+                        <h4>Pay Registration Fee</h4>
+                        <p>Pay the one-time registration fee of Ksh 1,000 and the minimum share capital of Ksh 2,000.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="step-number">4</div>
+                        <h4>Account Activation</h4>
+                        <p>Once your application is approved and payment confirmed, your account will be activated immediately.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="step-number">5</div>
+                        <h4>Start Saving & Borrowing</h4>
+                        <p>Begin contributing to your savings account and access our loan products after 6 months of consistent savings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center animate-on-scroll">
+                    <a href="downloads.html" class="btn btn-primary-custom me-3">Download Application Form</a>
+                    <a href="contact.html" class="btn btn-outline-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h3 class="mb-3">Ready to Join Mgrand Sacco?</h3>
+                    <p>Start your journey to financial freedom today by becoming a member of our growing community.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="contact.html" class="btn btn-light btn-lg">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="footer-title">About Mgrand Sacco</h4>
+                    <p>We are a member-owned financial cooperative dedicated to providing affordable financial services to our community.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="loans.html">Loans</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Financial Street, Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone-alt me-2"></i> +254 123 456 789</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@mgrandsacco.co.ke</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon - Fri: 8:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <div class="copyright">
+                        <p>&copy; 2023 Mgrand Sacco. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/scroll-animations.js"></script>
+</body>
+</html>
